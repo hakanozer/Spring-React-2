@@ -19,6 +19,16 @@ public class UseScanner {
         int sum = num1 + num2;
         System.out.println(sum);
 
+        Scanner stringRead = new Scanner(System.in);
+        //read.nextLine();
+        System.out.println("Adınız!");
+        String name = stringRead.nextLine();
+        System.out.println("Soyadınız!");
+        String surname = stringRead.nextLine();
+        System.out.println(name +" "+surname);
+
+        read.close();
+        stringRead.close();
 
     }
 
