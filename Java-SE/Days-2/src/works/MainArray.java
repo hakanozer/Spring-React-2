@@ -43,7 +43,7 @@ public class MainArray {
         }else {
             System.out.println( "Not Found Index" );
         }
-        
+
 
     }
 }
