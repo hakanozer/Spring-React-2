@@ -1,9 +1,16 @@
 package works;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class MainArrSample {
     public static void main(String[] args) {
+
+        Action action = new Action();
+        Settings settings = new Settings();
+        action.useSetting(settings);
+
+        action.noReturn("Ali", 30);
 
         // Kullanıcının stok girişi
         // kaç kalem ürün olduğunu kullanıcı belirler:
@@ -36,5 +43,6 @@ public class MainArrSample {
                 System.out.println("Lütfen sadece pozitif değer giriniz!");
             }
         }
+
     }
 }
