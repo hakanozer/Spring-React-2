@@ -4,6 +4,8 @@ public class UserImpl implements IUser, IProfile {
 
     @Override
     public String userName(int uid) {
+        status(uid);
+        userAge(10);
         return null;
     }
 

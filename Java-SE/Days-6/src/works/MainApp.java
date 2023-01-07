@@ -22,7 +22,5 @@ public class MainApp {
         BankCustomer.name = "Serkan Bil";
         System.out.println( BankCustomer.name );
 
-
-
     }
 }

@@ -11,4 +11,11 @@ public interface IUser {
     String userName( int uid );
     int userAge( int uid );
 
+    default boolean status(int uid) {
+        if (uid == 10) {
+            return true;
+        }
+        return false;
+    }
+
 }
