@@ -4,6 +4,10 @@ public class Kare extends Cizim {
 
     int width = 100;
 
+    public Kare() {
+        System.out.println(border);
+    }
+
     public Kare(int kareBorder) {
         super(kareBorder);
         System.out.println("This Line : " + border);
