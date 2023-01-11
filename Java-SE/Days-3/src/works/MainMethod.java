@@ -3,7 +3,7 @@ package works;
 public class MainMethod {
     public static void main(String[] args) {
 
-        // Nesne Üretimi
+        // Nesne Üretimi işlemi yapar
         Action obj = new Action();
         System.out.println( obj.age );
 
