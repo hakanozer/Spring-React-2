@@ -1,3 +1,4 @@
+package oop;
 
 final public class Action {
 
@@ -13,7 +14,7 @@ final public class Action {
     Settings settings = new Settings();
 
     public Action() {
-        System.out.println("Action Call :" + a);
+        System.out.println("oop.Action Call :" + a);
     }
 
     public Action(int a) {

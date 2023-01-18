@@ -1,7 +1,9 @@
+package oop;
+
 public class Settings {
 
     public Settings() {
-        System.out.println("Settings Call");
+        System.out.println("oop.Settings Call");
     }
 
     public int sum(int a, int b) {
