@@ -12,14 +12,26 @@ public class DB {
 
     public Connection connect() {
         try {
-            if ( conn != null || conn.isClosed() )
-            Class.forName(driver);
-            conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Connecton Success");
+            if ( conn == null || conn.isClosed() ) {
+                Class.forName(driver);
+                conn = DriverManager.getConnection(url, username, password);
+                System.out.println("Connection Success");
+            }
         }catch (Exception ex) {
-            System.err.println("Error: " + ex);
+            System.err.println("Connection Error: " + ex);
         }
         return conn;
+    }
+
+    public void close() {
+        try {
+            if ( conn != null && !conn.isClosed() ) {
+                conn.close();
+                System.out.println("Connection Close");
+            }
+        }catch (Exception ex) {
+            System.err.println("Close Error : " + ex);
+        }
     }
 
 }
