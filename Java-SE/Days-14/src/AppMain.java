@@ -53,6 +53,9 @@ public class AppMain {
         boolean loginStatus = service.userLogin("zehra@mail.com","6lXYqe");
         System.out.println(loginStatus);
 
+        ProductService productService = new ProductService();
+        productService.list();
+
     }
 
 }

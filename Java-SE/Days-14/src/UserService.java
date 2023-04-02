@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class UserService {
 
-    DB db = new DB();
+    private DB db = new DB();
 
     public int save(User user) {
         int status = 0;
