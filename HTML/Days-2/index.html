@@ -8,8 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="site.css">
     <!-- <base href="https://www.google.com.tr/"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
+
+<h1 class="title"><marquee direction="top">Welcome Site</marquee></h1>
+<h1 class="title tracking-in-expand">Welcome Site</h1>
 
 <table class="tg">
     <thead>
@@ -33,11 +37,59 @@
     </tbody>
 </table>
 
-<a target="_blank" class="btnClass" href="http://google.com.tr">Goto Google</a>
-<a target="_blank" class="btnClass" href="imghp">Google Base</a>
-<a class="btnClass" href="about.html">About Us</a>
-<a class="btnClass" href="https://docs.spring.io/spring-framework/docs/2.5.x/spring-reference.pdf">PDF</a>
-<a class="btnClass" href="site.zip">Zip</a>
+<a target="_blank" class="btnClass scale-up-center" href="http://google.com.tr">Goto Google</a>
+<a target="_blank" class="btnClass scale-up-center" href="imghp">Google Base</a>
+<a class="btnClass scale-up-center" href="about.html">About Us</a>
+<a class="btnClass scale-up-center" href="https://docs.spring.io/spring-framework/docs/2.5.x/spring-reference.pdf">PDF</a>
+<a class="btnClass scale-up-center" href="site.zip">Zip</a>
 
+<div style="clear: both" >
+    <a href="mailto:hakanozer02@gmail.com">
+        <img src="img/email.png" width="50" /></a>
+    <a href="tel:05436667788">
+        <img src="img/phone.png" width="50" /></a>
+    <a href="index.html"><img src="img/sample.gif" width="70" /></a>
+</div>
+
+<iframe class="scale-up-center" width="560" height="315" src="https://www.youtube.com/embed/9xwazD5SyVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<span class="material-symbols-outlined">
+keyboard_double_arrow_right
+</span>
+
+<hr />
+<form action="/register" method="post" autocomplete="off"  >
+    <h2>Register</h2>
+    <input required name="email" type="email" placeholder="E-Mail" ><br/><br/>
+    <input required name="password" type="password" placeholder="Password" ><br/><br/>
+    <input required readonly name="name" type="text" value="Ali Bilmem" /><br/><br/>
+    <input required name="code" minlength="3" maxlength="3" placeholder="Code...(3 Char)"><br/><br/>
+    <textarea placeholder="Detail" rows="10" cols="40" ></textarea><br/><br/>
+    <input checked type="checkbox" name="futbol" id="futbol"> <label for="futbol">Futboll</label>
+    <input type="checkbox" name="gures" id="gures"> <label for="gures">Güreş</label>
+    <input type="checkbox" name="yuzme" id="yuzme"> <label for="yuzme">Yüzme</label><br/><br/>
+
+    <input required type="radio" name="akamdemik" value="ilkokul" id="ilkokul"><label for="ilkokul">İlkokul</label>
+    <input required type="radio" name="akamdemik" value="ortaokul" id="ortaokul"><label for="ortaokul">Ortaokul</label>
+    <input required checked type="radio" name="akamdemik" value="lise" id="lise"><label for="lise">Lise</label>
+    <input required type="radio" name="akamdemik" value="universite" id="universite"><label for="universite">Üniversite</label><br/><br/>
+
+    <select required name="city">
+        <option value="">Selected</option>
+        <option value="İstanbul">İstanbul</option>
+        <option value="Ankara">Ankara</option>
+        <option value="İzmir">İzmir</option>
+        <option value="Bursa">Bursa</option>
+    </select><br/><br/>
+
+    <input type="hidden" value="ksjdklfjsdl" name="hiddenName" />
+
+    <button class="submit" type="submit"></button>
+    <button class="reset" type="reset"></button>
+</form>
+<hr />
+    <video src="media/video.mp4" controls width="560"></video><br/><br/>
+    <audio src="media/music.mp3" controls></audio>
+<hr />
 </body>
 </html>
