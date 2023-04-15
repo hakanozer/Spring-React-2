@@ -1,0 +1,50 @@
+.nav-item .active {
+    font-size: small;
+    font-weight: bolder;
+}
+
+.mr-auto span {
+    padding: 5px 13px;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 150px;
+}
+
+.mr-auto span a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bi-facebook, .bi-twitter {
+    font-size: 21px;
+    margin-right: 10px;
+}
+
+.bi-linkedin {
+    font-size: 21px;
+    margin-right: 20px;
+}
+
+.slider-text {
+    position: absolute;
+    right: 53%;
+    bottom: 27%;
+}
+
+.slider-text h5 {
+    font-size: 100px;
+}
+
+.slider-text h5 span {
+    color: #ffc107;
+    background-color: black;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.small-slider-text {
+    color: gray;
+    font-size: small;
+}
