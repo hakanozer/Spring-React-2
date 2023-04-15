@@ -1,0 +1,72 @@
+.navbar_style{
+    background-color: #fadd00;
+    height: 90px;
+}
+.main_body{
+    height: 540px;
+    background-color: #fadd00;
+    padding-top: 100px;
+}
+
+.book_a_cap_card1{
+    margin: 10px 0px 7px 30px;
+}
+.book_a_cap_card2{
+    margin: 10px 0px 7px 0px;
+}
+.book_a_cap_card3{
+    margin: 10px 30px 7px 0px;
+}
+.book_a_cap_button{
+    box-shadow: 3px 3px 3px 3px #aba8a8;
+    margin: 10px;
+}
+.button_booknow{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    font-family:"Cambria Math";
+    text-decoration: black;
+    border-width: 0px;
+    color: black;
+}
+
+.book_a_cab_form1{
+    margin: 30px 30px 10px 30px;
+}
+.book_a_cab_form2{
+    margin: 10px 10px 10px 30px;
+}
+.book_a_cab_form3{
+    margin: 10px 30px 10px 10px;
+}
+.book_a_cab_body{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    border-width:1px;
+    border-color: white;
+    box-shadow: 5px 5px 5px 5px #cecece;
+    height: 650px;
+}
+.taxi{
+    position: absolute;
+    clip: rect(0px,60px,200px,0px);
+}
+.sosyal_media_icon{
+    padding-left: 6px;
+}
+.call_button{
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin-left: 150px;
+
+}
+.our_vehicle_title{
+    margin: 20px;
+    font-size: 20px;
+}
+
+.our_package_cardbody{
+    background-color: #ffffff;
+}
