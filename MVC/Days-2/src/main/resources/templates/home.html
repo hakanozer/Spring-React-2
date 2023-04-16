@@ -12,12 +12,49 @@
 <body>
 <div class="container">
 
-    <th:block th:if="${users != null}">
-        <li th:each="item : ${users}">
-            <span th:text="${item.uid}"></span>
-            <span th:text="${item.name}"></span>
-        </li>
+    <th:block th:if="${status != null}">
+        <th:block th:if="${ status == 0 }">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> <span th:text="${message}"></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </th:block>
+        <th:block th:if="${ status > 0 }">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> <span th:text="${message}"></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </th:block>
     </th:block>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">UID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody th:if="${users != null}">
+
+        <tr th:each="item, iter : ${users}">
+            <th scope="row" th:text="${iter.count}"></th>
+            <th scope="row" th:text="${item.uid}"></th>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.surname}"></td>
+            <td th:text="${item.email}"></td>
+            <td th:text="${item.date}"></td>
+            <td>
+                <a th:href="${'/userDelete/'+item.uid}" role="button" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
 
 </div>
 </body>
