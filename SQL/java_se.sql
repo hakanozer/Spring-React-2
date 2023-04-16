@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 05, 2023 at 11:23 AM
+-- Generation Time: Apr 16, 2023 at 10:06 AM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.16
 
@@ -623,12 +623,7 @@ INSERT INTO `users` (`uid`, `name`, `surname`, `email`, `password`, `status`, `a
 (7, 'Fatihcan', 'Bil', 'fatih@mail.com', '12345', 1, 64, '2023-02-04 11:43:32'),
 (101, 'Zehra', 'Bilsin', 'zehra@mail.com', '6lXYqe', 1, 73, '2023-01-18 06:54:14'),
 (102, 'Ali', 'Gascoine', 'lgascoine1@hugedomains.com', 'joWcKDB1Ah74', 0, 72, '2022-03-29 20:35:17'),
-(103, 'Umberto', 'Bydaway', 'ubydaway2@usgs.gov', 'EJC3rvuYeT', 0, 44, '2022-04-27 09:55:40'),
 (104, 'Wrennie', 'Sailer', 'wsailer3@simplemachines.org', 'Mz9bFZRMuWA', 1, 1, '2022-04-25 01:33:30'),
-(105, 'Zehra', 'Bilsin', 'priep4@shutterfly.com', 'kcF0ful', 0, 73, '2022-09-17 02:56:56'),
-(106, 'Cobb', 'Gorham', 'cgorham5@biglobe.ne.jp', 'kVn16iLlQ5V2', 1, 61, '2022-08-23 09:02:21'),
-(107, 'Brittaney', 'Gallihawk', 'bgallihawk6@furl.net', 'tfq8uq', 1, 89, '2022-11-25 12:27:51'),
-(108, 'Case', 'Stovell', 'cstovell7@yellowbook.com', 'vkXhwVK5', 1, 62, '2022-09-02 05:26:10'),
 (109, 'Samuel', 'Bette', 'sbette8@yandex.ru', 'idQ8JCrp8M', 1, 43, '2023-02-02 17:56:18'),
 (110, 'Brant', 'Morecombe', 'bmorecombe9@paginegialle.it', 'iOBQPB1', 0, 29, '2022-05-17 11:05:09'),
 (111, 'Katrinka', 'Raspison', 'kraspisona@dagondesign.com', 'rHKEi9Yv7tW', 0, 15, '2022-08-20 19:41:41'),
@@ -670,7 +665,7 @@ INSERT INTO `users` (`uid`, `name`, `surname`, `email`, `password`, `status`, `a
 (147, 'Amabel', 'Bathowe', 'abathowe1a@squidoo.com', 'mtdH4U', 1, 2, '2022-07-05 22:44:04'),
 (148, 'Husein', 'Barizeret', 'hbarizeret1b@youtu.be', 'MYM5gRs8VH', 0, 34, '2022-06-20 22:52:06'),
 (149, 'Barthel', 'Toleman', 'btoleman1c@springer.com', 'iJJ9d8', 0, 63, '2022-11-26 22:12:08'),
-(150, 'Ossie', 'Beldom', 'obeldom1d@rakuten.co.jp', 'DqhwJeNQ', 0, 16, '2022-06-15 03:42:21'),
+(150, 'Sultan', 'Bilirim', 'sultany@mail.com', '12345', 1, 32, '2022-06-15 03:42:21'),
 (151, 'Alford', 'Peto', 'apeto1e@twitter.com', 'V9bzv4TC6', 0, 90, '2023-02-26 03:15:51'),
 (152, 'Lorianna', 'McVicar', 'lmcvicar1f@mozilla.com', 'i5PWJJPhtV1a', 0, 4, '2023-01-13 18:29:49'),
 (153, 'Rodge', 'Trahair', 'rtrahair1g@youtu.be', 'EJyMkT', 1, 48, '2022-10-07 06:06:14'),
@@ -1143,13 +1138,13 @@ INSERT INTO `users` (`uid`, `name`, `surname`, `email`, `password`, `status`, `a
 (620, 'Pail', 'Frid', 'pfridef@alibaba.com', 'wT0pQqYNU8N', 1, 67, '2022-04-21 18:22:25'),
 (621, 'Matt', 'Niven', 'mniveneg@miitbeian.gov.cn', 'czTNnLH7Zgok', 1, 87, '2022-04-05 09:05:28'),
 (622, 'Benny', 'Pleasants', 'bpleasantseh@i2i.jp', 'maRUSgXZZ0H1', 1, 37, '2023-01-07 05:14:41'),
-(623, 'Brodie', 'Toynbee', 'btoynbeeei@lulu.com', 'K7pGbN7EMpm', 1, 20, '2022-02-17 09:00:19');
-INSERT INTO `users` (`uid`, `name`, `surname`, `email`, `password`, `status`, `age`, `date`) VALUES
+(623, 'Brodie', 'Toynbee', 'btoynbeeei@lulu.com', 'K7pGbN7EMpm', 1, 20, '2022-02-17 09:00:19'),
 (624, 'Myrtie', 'Valsler', 'mvalslerej@usa.gov', '2rSMWa', 0, 87, '2022-11-28 04:30:35'),
 (625, 'Pepillo', 'Fenich', 'pfenichek@narod.ru', 'g6goQ3', 1, 80, '2022-03-13 23:14:15'),
 (626, 'Allyn', 'Merigot', 'amerigotel@hatena.ne.jp', 'Dmk1ywHetKC', 1, 37, '2022-06-30 17:24:54'),
 (627, 'Jedidiah', 'Guerrieri', 'jguerrieriem@sitemeter.com', 'eHyGVftSKwP', 1, 44, '2022-06-23 07:55:08'),
-(628, 'Sal', 'Brosenius', 'sbroseniusen@biglobe.ne.jp', 'RlSV9N2sJu6K', 0, 9, '2022-03-24 22:05:54'),
+(628, 'Sal', 'Brosenius', 'sbroseniusen@biglobe.ne.jp', 'RlSV9N2sJu6K', 0, 9, '2022-03-24 22:05:54');
+INSERT INTO `users` (`uid`, `name`, `surname`, `email`, `password`, `status`, `age`, `date`) VALUES
 (629, 'Milt', 'Bramford', 'mbramfordeo@hao123.com', 'ZvueP4olT', 0, 12, '2022-05-26 03:11:08'),
 (630, 'Angelia', 'Yakubovics', 'ayakubovicsep@netscape.com', 'vB5iorwN46c', 1, 33, '2022-03-07 10:34:38'),
 (631, 'Shanie', 'Pratchett', 'spratchetteq@ihg.com', 'nKorabw', 0, 30, '2023-02-23 06:52:07'),
@@ -1621,7 +1616,9 @@ INSERT INTO `users` (`uid`, `name`, `surname`, `email`, `password`, `status`, `a
 (1097, 'Gene', 'Tullot', 'gtullotro@webnode.com', 'TiSjEZxg0Uy0', 1, 65, '2022-11-18 12:13:08'),
 (1098, 'Penn', 'Discombe', 'pdiscomberp@tinypic.com', 'OXiTcz', 1, 1, '2023-02-20 00:19:35'),
 (1099, 'Georgia', 'Dinsmore', 'gdinsmorerq@yelp.com', '1aNxC617Qg', 0, 6, '2022-08-22 06:21:16'),
-(1100, 'Sande', 'Iskov', 'siskovrr@macromedia.com', 'tsUfe7', 0, 25, '2022-11-28 11:25:36');
+(1100, 'Sande', 'Iskov', 'siskovrr@macromedia.com', 'tsUfe7', 0, 25, '2022-11-28 11:25:36'),
+(1101, 'Sultan', 'Bilirim', 'sultan@mail.com', '12345', 1, 32, '2023-04-01 12:18:31'),
+(1105, 'Sultan', 'Bilirim', 'sultanx@mail.com', '12345', 1, 32, '2023-04-01 12:21:42');
 
 --
 -- Indexes for dumped tables
@@ -1685,7 +1682,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1101;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1106;
 
 --
 -- Constraints for dumped tables
