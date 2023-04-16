@@ -12,7 +12,12 @@
 <body>
 <div class="container">
 
-    <h1>Welcome Home Page</h1>
+    <th:block th:if="${users != null}">
+        <li th:each="item : ${users}">
+            <span th:text="${item.uid}"></span>
+            <span th:text="${item.name}"></span>
+        </li>
+    </th:block>
 
 </div>
 </body>
