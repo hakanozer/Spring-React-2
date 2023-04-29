@@ -12,6 +12,8 @@
 <body>
 <div class="container">
 
+    <div th:replace="inc/navbar"></div>
+
     <th:block th:if="${status != null}">
         <th:block th:if="${ status == 0 }">
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
