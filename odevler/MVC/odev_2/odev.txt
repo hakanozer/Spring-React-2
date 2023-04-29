@@ -1,0 +1,9 @@
+Note Yönetim Uygulaması
+
+Note Ekleme Formu
+	Title
+	Detail
+
+Note List
+Tablo
+	Notu silebilen button
