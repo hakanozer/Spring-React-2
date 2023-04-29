@@ -14,7 +14,7 @@ public class UserService {
         List<User> ls = new ArrayList<>();
         DB db = new DB();
         try {
-            String sql = "select * from users";
+            String sql = "select * from users where status = 1";
             PreparedStatement pre = db.connect().prepareStatement(sql);
             ResultSet rs = pre.executeQuery();
             while(rs.next()) {
@@ -34,13 +34,15 @@ public class UserService {
         return ls;
     }
 
-    public int deleteUser(int uid) {
+    public int deleteUser(int uid, int dbStatus) {
         int status = 0;
         DB db = new DB();
         try {
-            String sql = "delete from users where uid = ?";
+            //String sql = "delete from users where uid = ?";
+            String sql = "update users set status = ? where uid = ?";
             PreparedStatement pre = db.connect().prepareStatement(sql);
-            pre.setInt(1,uid);
+            pre.setInt(1,dbStatus);
+            pre.setInt(2,uid);
             status = pre.executeUpdate();
         } catch (Exception ex) {
             System.out.println(ex);
@@ -49,5 +51,13 @@ public class UserService {
         }
         return status;
     }
+
+    public int userSave( User user ) {
+        int status = 0;
+
+        return status;
+    }
+
+
 
 }

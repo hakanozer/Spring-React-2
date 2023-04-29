@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <title>Rent a Car</title>
+</head>
+
+
+<div class="">
+    <div style="background-color: #fddd03">
+        <nav class="navbar navbar-expand-lg d-flex bs-tertiary-bg ">
+            <div class="container-fluid" style="background-color: #fddd03">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" width="120" height="35" style="margin-left: 38px; margin-right: 25px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><b>HOME</b></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>OUR VEHICLE</b></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>PACKAGE</b></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>ABOUT</b></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>PASSENGER FEED</b></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><b>CONTACT</b></a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="background-color: black">
+                                <b>PAGES</b>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            </ul>
+                        <li class="nav-item ms-lg-5 "><a href="tel:00000000000 ">
+                            <button type="button" class="btn btn-light rounded-5"><i class="bi bi-headphones"></i>
+                                00 123 456 789
+                            </button>
+                        </a>
+                        </li>
+                        <li class="nav-item button ms-lg-5">
+                            <a href="https://www.facebook.com" target="_blank"><img src="img/face.png" width="32"
+                                                                                    height="32"></a>
+                        </li>
+                        <li class="nav-item button ms-lg-2">
+                            <a href="https://twitter.com/" target="_blank" style="margin: auto"><img
+                                    src="img/twitter.png" width="32" height="32"></a>
+                        </li>
+
+                        <li class="nav-item button ms-lg-2">
+                            <a href="https://www.linkedin.com/in/merrttopal/" target="_blank" style="margin: auto"><img
+                                    src="img/linkedin.png" width="32" height="32"></a>
+                        </li>
+                    </ul>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+    </div>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/index1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/taksi2.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/taksi3.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+</div>
+
+<div class="m-4 ms-5 p-5">
+
+
+    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+
+        <div class="card col-12 d-flex flex-column flex-lg-row ">
+
+            <div class="card-body col-lg-6">
+
+                <div class="d-flex justify-content-center ">
+                    <p class="m-0 fs-1">
+                    <h1><b>BOOK</b> A CAB </h1>
+                    </p>
+
+                </div>
+
+                <div class="d-flex justify-content-center ">
+
+                    <p class="m-3 fs-7">Contrary to popular belief, Lorem Ipsum is
+                        not simply random text. It has roots is a piece of
+                        classical Latin literature frome 45 BC, making it over 2000 years old.
+                        Richard McClintock.
+                    </p>
+                </div>
+                <i
+                        style="margin-left: 15px ; margin-top : 15px  ; margin-bottom : 15px  ;border-left: 3px solid #fddd03 ;height: 50px;">We
+                    are a company that offers
+                    unique and clear design and services</i>
+
+                <br>
+                <br>
+                <br>
+                <div>
+                    <p><i class="bi bi-arrow-right-circle"></i> Super & reliable services </p>
+                    <p><i class="bi bi-arrow-right-circle"></i> 24 x 7 customer support provide </p>
+                    <p><i class="bi bi-arrow-right-circle"></i> Large Range of Models </p>
+                    <p><i class="bi bi-arrow-right-circle"></i> GPS Tracking and help </p>
+                    <p><i class="bi bi-arrow-right-circle"></i> Powerful Security Offer </p>
+                </div>
+
+                <button type="button" class="btn btn-warning">CONTACT US</button>
+                <button type="button" class="btn btn-light">ABOUT US</button>
+
+            </div>
+
+
+            <div class="flex-colum col-lg-6 p-4 bg-warning ">
+
+                <div class="card-body input-group m-lg-2">
+
+                    <label class="input-group-text" for="inputGroupSelect01"><i
+                            class="bi bi-car-front-fill"></i></label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected="">Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="col-12 d-flex justify-content-between p-2">
+
+                    <div class="col-6 p-2">
+
+                        <div class="input-group m-lg-2">
+
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-globe-americas"></i></span>
+                            <input type="text" class="form-control" placeholder="Pick-up Location" aria-label="Username"
+                                   aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group m-lg-2">
+
+                            <span class="input-group-text" id="basic-addon2"><i class="bi bi-calendar2-heart"></i>
+                            </span>
+                            <input type="date" class="form-control" placeholder="Drop off Location"
+                                   aria-label="Username" aria-describedby="basic-addon2">
+                        </div>
+
+                        <div class="input-group m-lg-2">
+
+                            <span class="input-group-text" id="basic-addon3"><i class="bi bi-person-fill"></i></span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                   aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+
+                    <div class="col-6 p-2">
+
+                        <div class="input-group m-lg-2">
+
+                            <span class="input-group-text" id="basic-addon4"><i class="bi bi-calendar2-heart"></i>
+                            </span>
+                            <input type="date" class="form-control" placeholder="Date and Time"
+                                   aria-describedby="basic-addon4">
+                        </div>
+
+                        <div class="input-group m-lg-2">
+
+                            <span class="input-group-text" id="basic-addon5"><i class="bi bi-globe-americas"></i></span>
+                            <input type="date" class="form-control" placeholder="Date and Time"
+                                   aria-describedby="basic-addon5">
+                        </div>
+
+                        <div class="input-group m-lg-2">
+
+                            <span class="input-group-text" id="basic-addon6"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Username"
+                                   aria-describedby="basic-addon6">
+                        </div>
+                    </div>
+                </div>
+                <div class="ms-2 p-3 pe-2">
+
+                    <div class="card col-12 d-flex p-2  input-group ">
+                        <div class="d-flex justify-content-center">
+                            <div class=" p-md-2 p-xxl-3">
+                                <div class=" ">
+                                    <i class="bi bi-car-front-fill"></i>
+
+                                    <label class="form-check-label pe-2" for="flexCheckDefault">
+                                        <h6>
+                                            REGULAR
+                                        </h6>
+                                    </label><input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault">
+                                </div>
+                                <h3 class="py-2">
+                                    $50
+                                </h3>
+                                <p>
+                                    1 Passanger
+                                </p>
+                            </div>
+                            <div class="  p-md-2 p-xxl-3">
+                                <div class=" ">
+                                    <i class="bi bi-car-front-fill"></i>
+
+                                    <label class="form-check-label pe-2" for="flexCheckDefault">
+                                        <h6>
+                                            REGULAR
+                                        </h6>
+                                    </label><input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault">
+                                </div>
+                                <h3 class="py-2">
+                                    $50
+                                </h3>
+                                <p>
+                                    1 Passanger
+                                </p>
+                            </div>
+                            <div class=" p-md-2 p-xxl-3">
+                                <div class=" ">
+                                    <i class="bi bi-car-front-fill"></i>
+
+                                    <label class="form-check-label pe-2" for="flexCheckDefault">
+                                        <h6>
+                                            REGULAR
+                                        </h6>
+                                    </label><input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault">
+                                </div>
+                                <h3 class="py-2">
+                                    $50
+                                </h3>
+                                <p>
+                                    1 Passanger
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ms-2 p-3 pe-2">
+                    <button type="button" class="btn btn-light col-md-3 ">Submit Form</button>
+                    <button type="button" class="btn btn-dark col-md-3 ">Reset</button>
+
+                </div>
+
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="m-5 p-5">
+    <div class="d-flex p-5">
+        <p class="m-0 fs-1">
+        <h1><b>OUR</b> VEHİCLE </h1>
+        </p>
+    </div>
+    <div class="d-flex p-5">
+        <div class="card">
+            <img src="img/taxi.png" class="card-img-top w-50 m-auto">
+            <div class="card-body">
+                <h3 class="card-text">Vehicle C6</h3>
+                <p class="card-text" style="color: darkgrey"> Start From $50 </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/taxi.png" class="card-img-top w-50 m-auto">
+            <div class="card-body">
+                <h3 class="card-text">Vehicle C7</h3>
+                <p class="card-text" style="color: darkgrey"> Start From $50 </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/taxi.png" class="card-img-top w-50 m-auto">
+            <div class="card-body">
+                <h3 class="card-text">Vehicle C8</h3>
+                <p class="card-text" style="color: darkgrey"> Start From $50 </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/taxi.png" class="card-img-top w-50 m-auto">
+            <div class="card-body">
+                <h3 class="card-text">Vehicle C9</h3>
+                <p class="card-text" style="color: darkgrey"> Start From $50 </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="alert" style="background-color: black">
+    <div class="container text-center mb-5">
+
+        <div class="row g-3">
+            <h1 CLASS="text-lg-start text-warning mt-5 my-4 m-4">OUR
+                <p1 class="text-light  text-opacity-75">PACKAGE</p1>
+            </h1>
+            <div class="col">
+                <div class="p-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h3 class="card-title">SUPERIOR</h3>
+                            <p class="card-title" style="text-decoration-color: darkgrey">$600/Week</p>
+                            <ul class="m-5 border-bottom border-top" style="color: darkgrey">
+                                <li class="border-bottom">CITY TRAVEL PERMIT</li>
+                                <li class="border-bottom">AC VEHICLE</li>
+                                <li class="border-bottom">3 TOURİSM PLACE</li>
+                                <li class="border-bottom">TOURİST GUIDE</li>
+                                <li class="">QUALİTY VEHİCLES</li>
+                            </ul>
+                            <a href="#" class="btn btn-warning">Get Now</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h3 class="card-title ">EXCLUSİVE</h3>
+                            <p class="card-title" style="text-decoration-color: darkgrey">$900/2-Week</p>
+                            <ul class="m-5 border-bottom border-top" style="color: darkgrey">
+                                <li class="border-bottom">CITY TRAVEL PERMIT</li>
+                                <li class="border-bottom">AC VEHICLE</li>
+                                <li class="border-bottom">3 TOURİSM PLACE</li>
+                                <li class="border-bottom">TOURİST GUIDE</li>
+                                <li class="">QUALİTY VEHİCLES</li>
+                            </ul>
+                            <a href="#" class="btn btn-warning">Get Now</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h3 class="card-title">SUPERIOR</h3>
+                            <p class="card-title" style="text-decoration-color: darkgrey">$1500/Month</p>
+                            <ul class="m-5 border-bottom border-top" style="color: darkgrey">
+                                <li class="border-bottom">CITY TRAVEL PERMIT</li>
+                                <li class="border-bottom">AC VEHICLE</li>
+                                <li class="border-bottom">3 TOURİSM PLACE</li>
+                                <li class="border-bottom">TOURİST GUIDE</li>
+                                <li class="">QUALİTY VEHİCLES</li>
+                            </ul>
+                            <a href="#" class="btn btn-warning">Get Now</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row col " style="background-color:#FDE433FF">
+    <div class="col mx-5 d-inline-block ">
+        <div class="m-5 d-inline-block">
+            <h1 CLASS="text-lg-start  mt-5 my-4 m-4 alert-link">
+                <p1 class="text-light  ">PICK</p1>
+                APP
+            </h1>
+            <h2 CLASS="text-lg-start  mt-5 my-4 m-4 alert-link">DOWNLOAD
+                <p1 class=" text-body-tertiary"> APP TO YOUR</p1>
+            </h2>
+            <h3 CLASS="mt-5 my-4 m-4 ">iPHONE,iPAD & ANDROID</h3>
+            <h6 CLASS=" my-4 m-4 text-light">NOW AVAILABLE ON</h6>
+            <a target="_blank"
+               href="https://play.google.com/store/games?gl=TR&utm_source=emea_Med&utm_medium=hasem&utm_content=Nov2020&utm_campaign=Evergreen&pcampaignid=MKT-EDR-emea-tr-1001280-Med-hasem-py-Evergreen-Nov2020-Text_Search_BKWS%7CONSEM_kwid_43700007753622365&gclid=CjwKCAjwuqiiBhBtEiwATgvixACsIdSMaLdniyMFZsDxWzwhHffJmLKsUwSwUd6PFdj8K6LIQBsVSBoCwZ4QAvD_BwE&gclsrc=aw.ds&pli=1">
+                <button type="button" class="btn btn-primary btn-lg my-4 m-4 bg-black "><i
+                        class="bi bi-google-play"></i> Google Play
+                </button>
+            </a>
+            <a target="_blank" href="https://www.apple.com/tr/app-store/">
+                <button type="button" class="btn btn-secondary btn-lg my-4 m-4 bg-black "><i class="bi bi-apple"></i>
+                    App Store
+                </button>
+            </a>
+        </div>
+    </div>
+    <img class="col-5" src="img/pickup.png" alt="">
+
+</div>
+<div class="row">
+    <div class="col">
+        <h1 style="margin-left: 300px; margin-top: 150px"><b>PASSENGER</b> <span style="font-family: Arial">FEED</span></h1>
+        <p style="margin-left: 300px;margin-top: 10px">WHAT SAY OUR PASSENGER</p>
+        <p class="fw-light" style="margin-left: 300px;margin-top: 50px;">Lorem Ipsum is not simply random <br> text.Latin literature from 45
+            <br> BC, making it over 2000 years old.</p>
+        <div class="m-5 ms-5 p-5">
+            <button type="button" class="btn btn-outline-secondary ms-5" style="background-color: gold;">
+                ADD YOUR FEED
+            </button>
+            <button type="button" class="btn btn-outline-secondary ms-5" style="background-color: white;">
+                VIEW ALL
+            </button>
+        </div>
+
+    </div>
+
+</div>
+<div style="height: 650px;background-color: #383232">
+    <div style="display: flex">
+        <div style="margin-top: 150px;margin-left: 350px">
+            <h1><b style="color: gold">CONTACT</b></h1>
+            <h6 style="color: white;margin-top: 50px">HEAD OFFICE</h6>
+            <small style="color: gray">40 Street No, Evenue Building <br>airport Country,012-213</small>
+            <small style="color: gray"><br><br>
+                <i class="bi bi-headphones"></i>
+                (99) 999 - 888 - 12
+            </small>
+            <small style="color: gray"><br>
+                <i class="bi bi-printer-fill"></i>
+                123 - 456 - 7890
+            </small>
+            <small style="color: gray"><br>
+                <i class="bi bi-envelope"></i>
+                support@pickup.com
+            </small>
+            <small style="color: gray"><br>
+                <i class="bi bi-briefcase-fill"></i>
+                career@pickup.com
+            </small>
+            <small style="color: gray"><br><br><br>
+                <i class="bi bi-facebook"></i>
+            </small>
+            <small style="color: gray;margin-left: 10px">
+                <i class="bi bi-twitter"></i>
+            </small>
+            <small style="color: gray;margin-left: 10px">
+                <i class="bi bi-youtube"></i>
+            </small>
+            <small style="color: gray;margin-left: 10px">
+                <i class="bi bi-linkedin"></i>
+            </small>
+            <small style="color: gray;margin-left: 10px">
+                <i class="bi bi-pinterest"></i>
+            </small>
+        </div>
+        <div class="container">
+            <div class="card" style="width: 18rem;margin-top: 120px;margin-left: 300px;background-color: black;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+                <div class="card-body">
+                    <h6 class="card-title" style="color: white;margin-left: 10px">TOLL-FREE (99) 999 - 888 -22</h6>
+                    <small style="color: white;font-size: 10px;margin-left: 10px">IF YOU HAVE A QUESTION ? FILL THE FORM</small>
+                    <input type="name" placeholder="Enter Name" style="margin-left: 10px;margin-top: 30px;width: 230px;height: 40px">
+                    <input type="email" placeholder="Enter Email" style="margin-left: 10px;margin-top: 30px;width: 230px;height: 40px">
+                    <textarea name="" placeholder="Type message" cols="30" rows="5" style="margin-top: 30px;width:230px;margin-left: 10px "></textarea>
+                    <button type="button" class="btn btn-outline-secondary" style="background-color: gold;border: 0px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                        <i class="bi bi-send"></i> SEND MESSAGE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>
