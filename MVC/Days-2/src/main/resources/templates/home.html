@@ -40,6 +40,7 @@
             <th scope="col">Email</th>
             <th scope="col">Date</th>
             <th scope="col">Delete</th>
+            <th scope="col">Info</th>
         </tr>
         </thead>
         <tbody th:if="${users != null}">
@@ -53,6 +54,9 @@
             <td th:text="${item.date}"></td>
             <td>
                 <a th:href="${'/userDelete/'+item.uid}" role="button" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+            <td>
+                <a th:href="${'/userInfo/'+item.uid}" role="button" class="btn btn-primary btn-sm">Info</a>
             </td>
         </tr>
 

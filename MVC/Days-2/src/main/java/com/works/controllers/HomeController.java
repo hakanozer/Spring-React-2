@@ -33,6 +33,14 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/userInfo/{uid}")
+    public String userInfo(@PathVariable int uid) {
+        System.out.println("uid : " + uid);
+        return "userInfo";
+    }
+
+
+
     @GetMapping("/userDelete/{uid}")
     public String userDelete(@PathVariable int uid) {
         status = service.deleteUser(uid, 0);
