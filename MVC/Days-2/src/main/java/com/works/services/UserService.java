@@ -10,12 +10,15 @@ import java.util.List;
 
 public class UserService {
 
-    public List<User> users() {
+    public List<User> users(int p) {
         List<User> ls = new ArrayList<>();
         DB db = new DB();
         try {
-            String sql = "select * from users where status = 1 order by uid desc";
+            p = p - 1;
+            p = p * 50;
+            String sql = "select * from users where status = 1 order by uid desc limit ? ,50";
             PreparedStatement pre = db.connect().prepareStatement(sql);
+            pre.setInt(1, p);
             ResultSet rs = pre.executeQuery();
             while(rs.next()) {
                 User u = new User();
@@ -32,6 +35,24 @@ public class UserService {
             db.close();
         }
         return ls;
+    }
+
+    public int totalCount() {
+        int count = 0;
+        DB db = new DB();
+        try {
+            String sql = "select count(uid) as count  from users where status = 1";
+            PreparedStatement pre = db.connect().prepareStatement(sql);
+            ResultSet rs = pre.executeQuery();
+            if ( rs.next() ) {
+                count = rs.getInt("count");
+            }
+        }catch (Exception ex) {
+            System.err.println("totalCount Error : " + ex);
+        }finally {
+            db.close();
+        }
+        return count;
     }
 
     public int deleteUser(int uid, int dbStatus) {
