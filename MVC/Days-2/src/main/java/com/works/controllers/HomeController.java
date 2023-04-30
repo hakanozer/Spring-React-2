@@ -1,5 +1,6 @@
 package com.works.controllers;
 
+import com.works.props.User;
 import com.works.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,8 +35,9 @@ public class HomeController {
     }
 
     @GetMapping("/userInfo/{uid}")
-    public String userInfo(@PathVariable int uid) {
-        System.out.println("uid : " + uid);
+    public String userInfo(@PathVariable int uid, Model model) {
+        User u = service.single(uid);
+        model.addAttribute("user", u);
         return "userInfo";
     }
 
