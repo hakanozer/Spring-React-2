@@ -41,6 +41,7 @@
             <th scope="col">Date</th>
             <th scope="col">Delete</th>
             <th scope="col">Info</th>
+            <th scope="col">Update</th>
         </tr>
         </thead>
         <tbody th:if="${users != null}">
@@ -58,6 +59,48 @@
             <td>
                 <a th:href="${'/userInfo/'+item.uid}" role="button" class="btn btn-primary btn-sm">Info</a>
             </td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" th:attr="data-bs-target='#customerModal'+${item.uid }">
+                    Update
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" th:id="${'customerModal'+item.uid}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel" th:text="${item.name + ' ' + item.surname}" ></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/userUpdate" method="post">
+                                    <div class="mb-3">
+                                        <input readonly th:value="${item.uid}" name="uid" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <input th:value="${item.name}" name="name" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <input th:value="${item.surname}" name="surname" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" th:value="${item.email}" name="email" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <input th:value="${item.password}" name="password" class="form-control" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="number" th:value="${item.age}" name="age" class="form-control" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+
+
+            </td>
         </tr>
 
         </tbody>
@@ -71,6 +114,8 @@
             </th:block>
         </ul>
     </nav>
+
+
 
 </div>
 </body>
