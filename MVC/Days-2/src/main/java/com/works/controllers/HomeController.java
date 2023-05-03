@@ -1,10 +1,13 @@
 package com.works.controllers;
 
+import com.works.props.User;
 import com.works.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -15,16 +18,31 @@ public class HomeController {
     int uid = 0;
 
     @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("users", service.users());
+    public String home(Model model, @RequestParam(defaultValue = "1") int p) {
+        model.addAttribute("users", service.users(p));
         model.addAttribute("status", status);
         model.addAttribute("message", message);
         model.addAttribute("uid", uid);
+        int count = service.totalCount();
+        model.addAttribute("count", count);
+        int page = count % 50 == 0 ? count / 50 : (count / 50) + 1;
+        model.addAttribute("page", page);
+        model.addAttribute("p", p);
+
         status = -1;
         message = "";
         uid = 0;
         return "home";
     }
+
+    @GetMapping("/userInfo/{uid}")
+    public String userInfo(@PathVariable int uid, Model model) {
+        User u = service.single(uid);
+        model.addAttribute("user", u);
+        return "userInfo";
+    }
+
+
 
     @GetMapping("/userDelete/{uid}")
     public String userDelete(@PathVariable int uid) {
@@ -42,6 +60,13 @@ public class HomeController {
     @GetMapping("/userBack/{uid}")
     public String userBack(@PathVariable int uid) {
         service.deleteUser(uid, 1);
+        return "redirect:/";
+    }
+
+    @PostMapping("/userUpdate")
+    public String userUpdate( User user ) {
+        System.out.println(user);
+        service.updateUser(user);
         return "redirect:/";
     }
 

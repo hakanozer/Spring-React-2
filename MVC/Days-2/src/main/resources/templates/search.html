@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Site Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+
+    <div th:replace="inc/navbar"></div>
+    <h2 th:if="${q != null}" th:text="${'Search : ' + q}"></h2>
+
+    <th:block th:if="${users != null && users.size() == 0 }">
+        <div class="text-center"> Not Found! </div>
+    </th:block>
+
+    <th:block th:if="${users != null && users.size() > 0 }">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">UID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody th:if="${users != null}">
+
+        <tr th:each="item, iter : ${users}">
+            <th scope="row" th:text="${iter.count}"></th>
+            <th scope="row" th:text="${item.uid}"></th>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.surname}"></td>
+            <td th:text="${item.email}"></td>
+            <td th:text="${item.date}"></td>
+            <td>
+                <a th:href="${'/userDelete/'+item.uid}" role="button" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    </th:block>
+
+
+</div>
+</body>
+</html>
