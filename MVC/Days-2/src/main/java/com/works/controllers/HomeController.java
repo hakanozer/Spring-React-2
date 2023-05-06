@@ -10,13 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
 
-    final HttpServletRequest request;
 
     UserService service = new UserService();
     int status = -1;
@@ -25,10 +23,6 @@ public class HomeController {
 
     @GetMapping("/home")
     public String home(Model model, @RequestParam(defaultValue = "1") int p) {
-        boolean loginStatus = request.getSession().getAttribute("user") == null;
-        if ( loginStatus ) {
-            return "redirect:/";
-        }
         model.addAttribute("users", service.users(p));
         model.addAttribute("status", status);
         model.addAttribute("message", message);
