@@ -31,4 +31,11 @@ public class LoginController {
         return "redirect:/";
     }
 
+
+    @GetMapping("/logout")
+    public String logout() {
+        request.getSession().removeAttribute("user");
+        return "redirect:/";
+    }
+
 }
