@@ -30,6 +30,7 @@
     </th:block>
 
     <div th:text="${'Total Count: ' + count}" ></div>
+    <div class="table-responsive">
     <table class="table table-hover">
         <thead>
         <tr>
@@ -105,16 +106,18 @@
 
         </tbody>
     </table>
+    </div>
 
 
     <nav aria-label="...">
         <ul class="pagination">
             <th:block th:each="i : ${#numbers.sequence(1, page)}">
-                <li class="page-item" th:classappend="${ i == p ? 'active' : '' }"><a class="page-link" th:href="${'/?p='+i}" th:text="${i}">1</a></li>
+                <li class="page-item" th:classappend="${ i == p ? 'active' : '' }">
+                    <a class="page-link" th:href="${'/home/?p='+i}" th:text="${i}">1</a>
+                </li>
             </th:block>
         </ul>
     </nav>
-
 
 
 </div>

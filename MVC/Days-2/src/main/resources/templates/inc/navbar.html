@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+                    <a th:if="${user != null}" class="nav-link disabled" th:text="${user.name + ' ' + user.surname}">Disabled</a>
                 </li>
             </ul>
             <form method="get" action="/search" class="d-flex" role="search">
