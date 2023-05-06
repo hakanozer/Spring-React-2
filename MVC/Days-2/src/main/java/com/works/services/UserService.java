@@ -145,7 +145,30 @@ public class UserService {
 
 
     public User loginUser( User user ) {
-        return null;
+        User u = null;
+        DB db = new DB();
+        try {
+            String sql = "select * from users where email = ? and password = ?";
+            PreparedStatement pre = db.connect().prepareStatement(sql);
+            pre.setString(1, user.getEmail());
+            pre.setString(2, user.getPassword());
+            ResultSet rs = pre.executeQuery();
+            if ( rs.next() ) {
+                u = new User();
+                u.setUid(rs.getInt("uid"));
+                u.setName(rs.getString("name"));
+                u.setSurname(rs.getString("surname"));
+                u.setEmail(rs.getString("email"));
+                u.setPassword(rs.getString("password"));
+                u.setAge(rs.getInt("age"));
+                u.setDate(rs.getString("date"));
+            }
+        }catch (Exception ex) {
+            System.out.println("loginUser: "+ ex);
+        }finally {
+            db.close();
+        }
+        return u;
     }
 
 }
