@@ -143,4 +143,9 @@ public class UserService {
         return status;
     }
 
+
+    public User loginUser( User user ) {
+        return null;
+    }
+
 }

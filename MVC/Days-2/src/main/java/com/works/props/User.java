@@ -12,4 +12,5 @@ public class User {
     private String password;
     private Integer age;
     private String date;
+    private String remember;
 }

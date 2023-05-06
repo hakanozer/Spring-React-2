@@ -17,7 +17,7 @@ public class HomeController {
     String message = "";
     int uid = 0;
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home(Model model, @RequestParam(defaultValue = "1") int p) {
         model.addAttribute("users", service.users(p));
         model.addAttribute("status", status);
@@ -53,21 +53,21 @@ public class HomeController {
         }else {
             message = "Delete Fail - " + uid;
         }
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 
     @GetMapping("/userBack/{uid}")
     public String userBack(@PathVariable int uid) {
         service.deleteUser(uid, 1);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @PostMapping("/userUpdate")
     public String userUpdate( User user ) {
         System.out.println(user);
         service.updateUser(user);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 
