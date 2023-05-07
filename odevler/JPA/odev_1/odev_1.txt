@@ -1,0 +1,10 @@
+JPA Uygulaması üzerinden gidilecek. Normal SQL sorgu davranışları kullanılmayacak.
+
+Login Form yapılacak, girişte login form açılmalıdır.
+Boşluk ve hata denetimleri yapılmalıdır.
+
+Session  Manager prensibine göre uygulama hizmet verecek.
+Güvenli Alanlar:
+	Dashboard
+	Stock Manager
+

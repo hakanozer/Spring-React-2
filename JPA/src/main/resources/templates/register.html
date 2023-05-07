@@ -17,6 +17,18 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Register</h3>
+                        <th:block th:if="${error != ''}">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Hata!</strong> <i th:text="${error}"></i>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </th:block>
+                        <th:block th:if="${success != ''}">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Başarılı!</strong> <i th:text="${success}"></i>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </th:block>
                         <form method="post" action="/register">
 
                             <div class="row">
