@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     // select * from customer where email = ? and password  = ?
+    // JPAQL
     Optional<Customer> findByEmailEqualsIgnoreCaseAndPasswordEquals(String email, String password);
 
 }
