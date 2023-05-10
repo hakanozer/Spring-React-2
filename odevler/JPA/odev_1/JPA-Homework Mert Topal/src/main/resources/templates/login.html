@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<div class="container">
+    <th:block th:if="${error != ''}">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> <i th:text="${error}"></i>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </th:block>
+    <th:block th:if="${success != ''}">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Succes!</strong> <i th:text="${success}"></i>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </th:block>
+    <form class="form-signin" method="post" action="/loginUser">
+        <img class="mb-4" src="https://cdn-icons-png.flaticon.com/512/2170/2170153.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <a href="/register" role="button" class="btn btn-lg btn-success btn-block">Register</a>
+        <p class="mt-5 mb-3 text-muted">&copy; İstanbul Eğitim Akademi</p>
+    </form>
+</div>
+</body>
+</html>
