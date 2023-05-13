@@ -16,12 +16,15 @@ import java.io.IOException;
 @Configuration
 @RequiredArgsConstructor
 public class FilterConfig implements Filter {
+
     final CustomerService customerService;
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse res = (HttpServletResponse) servletResponse;
+
         String url = req.getRequestURI();
         String freeUrls[] = {"/","/loginUser","/register","/registerCustomer"};
 
@@ -35,18 +38,16 @@ public class FilterConfig implements Filter {
         if(loginStatus){
             boolean status = req.getSession().getAttribute("customer") == null;
             if(status){
-                res.sendRedirect("/dashboard");
+                res.sendRedirect("/");
             }else{
                 Customer customer = (Customer) req.getSession().getAttribute("customer");
                 System.out.println("this line user "+ customer);
                 req.setAttribute("customer",customer);
                 filterChain.doFilter(req,res);
             }
-
         }
         else {
             filterChain.doFilter(req,res);
         }
-
     }
 }

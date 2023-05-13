@@ -42,6 +42,9 @@ public class LoginController {
           if(control == null){
               error = "Wrong Mail!";
               return "redirect:/";
+          }else if (c.getCid() == null){
+              error = "Mail not found! Please Register.";
+              return "redirect:/";
           }else {
               error = "Wrong Password!";
               return "redirect:/";
