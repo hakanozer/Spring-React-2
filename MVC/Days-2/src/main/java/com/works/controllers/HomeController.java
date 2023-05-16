@@ -1,7 +1,6 @@
 package com.works.controllers;
 
 import com.works.props.User;
-import com.works.services.TinkEncDec;
 import com.works.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class HomeController {
 
-    final TinkEncDec tinkEncDec;
     UserService service = new UserService();
     int status = -1;
     String message = "";
@@ -37,12 +35,6 @@ public class HomeController {
         status = -1;
         message = "";
         uid = 0;
-
-        String cipherText = tinkEncDec.encrypt("12345");
-        System.out.println(cipherText);
-        String plainText =  tinkEncDec.decrypt(cipherText);
-        System.out.println(plainText);
-
         return "home";
     }
 

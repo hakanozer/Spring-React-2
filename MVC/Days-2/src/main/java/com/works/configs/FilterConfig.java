@@ -1,7 +1,9 @@
 package com.works.configs;
 
 import com.works.props.User;
+import com.works.services.TinkEncDec;
 import com.works.services.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.*;
@@ -11,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Configuration
+@RequiredArgsConstructor
 public class FilterConfig implements Filter {
 
+    final TinkEncDec tinkEncDec;
     UserService userService = new UserService();
 
     @Override
@@ -36,7 +40,8 @@ public class FilterConfig implements Filter {
                 Cookie[] cookies = req.getCookies();
                 for( Cookie cookie : cookies ) {
                     if (cookie.getName().equals("user")) {
-                        int val = Integer.parseInt(cookie.getValue());
+                        String plainText =  tinkEncDec.decrypt(cookie.getValue());
+                        int val = Integer.parseInt(plainText);
                         User u = userService.single(val);
                         if ( u != null )
                         req.getSession().setAttribute("user", u);

@@ -1,6 +1,7 @@
 package com.works.controllers;
 
 import com.works.props.User;
+import com.works.services.TinkEncDec;
 import com.works.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
+
+    final TinkEncDec tinkEncDec;
 
     UserService userService = new UserService();
     final HttpServletRequest request;
@@ -30,7 +33,8 @@ public class LoginController {
         if (u != null) {
             request.getSession().setAttribute("user", u);
             if ( user.getRemember() != null && user.getRemember().equals("on") ) {
-                Cookie cookie = new Cookie("user", ""+u.getUid());
+                String cipherText = tinkEncDec.encrypt(""+u.getUid());
+                Cookie cookie = new Cookie("user", cipherText);
                 cookie.setMaxAge(60 * 60);
                 response.addCookie(cookie);
             }
