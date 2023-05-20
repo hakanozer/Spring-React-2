@@ -34,7 +34,7 @@ public class DashboardController {
     @PostMapping("/productUpdate")
     public String productUpdate( Product product ) {
         product.setPid(updateID);
-        System.out.println( product );
+        productService.updateProduct(product);
         return "redirect:/dashboard";
     }
 

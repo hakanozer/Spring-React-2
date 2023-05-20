@@ -42,4 +42,13 @@ public class ProductService {
         return null;
     }
 
+    public boolean updateProduct( Product product ) {
+        try {
+            productRepository.saveAndFlush(product);
+            return true;
+        }catch (Exception ex) {
+            return false;
+        }
+    }
+
 }
