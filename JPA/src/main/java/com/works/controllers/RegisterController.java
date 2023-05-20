@@ -8,16 +8,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequiredArgsConstructor
 public class RegisterController {
 
     final CustomerService customerService;
+    final HttpServletRequest req;
     String error = "";
     String success = "";
 
     @GetMapping("/")
     private String register(Model model){
+        req.getSession().setAttribute("cid", 1);
         model.addAttribute("error", error);
         model.addAttribute("success", success);
         error = "";

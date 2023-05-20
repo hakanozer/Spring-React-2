@@ -18,5 +18,6 @@ public class Product {
     private String title;
     private Integer price;
     private String detail;
+    private Long cid;
 
 }
