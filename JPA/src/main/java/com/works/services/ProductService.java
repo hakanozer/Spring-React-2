@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -31,6 +32,14 @@ public class ProductService {
             }
         }catch (Exception ex) { }
         return  false;
+    }
+
+    public Product getSingleProduct( Long pid ) {
+        Optional<Product> optionalProduct = productRepository.findById(pid);
+        if ( optionalProduct.isPresent() ){
+            return optionalProduct.get();
+        }
+        return null;
     }
 
 }

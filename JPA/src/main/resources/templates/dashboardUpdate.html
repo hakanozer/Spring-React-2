@@ -10,24 +10,25 @@
 </head>
 <body>
 <div class="container">
-    <h2>Product Add</h2>
+    <h2>Product Update</h2>
     <div class="container">
         <div class="row">
             <div class="container col-sm-6">
-                <form method="post" action="/productSave">
+                <form th:if="${product != null}" method="post" action="/productUpdate">
+
                     <div class="mb-3">
                         <label class="form-label" for="title">Başlık</label>
-                        <input name="title" required type="text" class="form-control" id="title">
+                        <input th:value="${product.title}" name="title" required type="text" class="form-control" id="title">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="title">Fiyat</label>
-                        <input name="price" required type="number" class="form-control" id="price">
+                        <input th:value="${product.price}" name="price" required type="number" class="form-control" id="price">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="detail">İçerik</label>
-                        <textarea class="form-control" name="detail" id="detail" rows="6"></textarea>
+                        <textarea th:text="${product.detail}" class="form-control" name="detail" id="detail" rows="6"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
                 </form>
             </div>
             <div class="col-sm-6"></div>
@@ -59,7 +60,6 @@
                 <td>
                     <a th:href="${'/dashboard/'+item.pid}" role="button" class="btn btn-primary btn-sm">Update</a>
                 </td>
-
                 </th:block>
             </tr>
             </tbody>
