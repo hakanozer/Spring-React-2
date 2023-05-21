@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -17,16 +18,16 @@ public class DashboardController {
     private Long updateID = 0l;
 
     @GetMapping("/dashboard")
-    public String dashboard(Model model) {
-        model.addAttribute("products", productService.allProduct());
+    public String dashboard(Model model, @RequestParam(defaultValue = "0") int page) {
+        model.addAttribute("products", productService.allProduct(page));
         updateID = 0l;
         return "dashboard";
     }
 
     @GetMapping("/dashboard/{pid}")
-    public String dashboardUpdate(Model model, @PathVariable Long pid) {
+    public String dashboardUpdate(Model model, @PathVariable Long pid, @RequestParam(defaultValue = "0") int page) {
         updateID = pid;
-        model.addAttribute("products", productService.allProduct());
+        model.addAttribute("products", productService.allProduct(page));
         model.addAttribute("product", productService.getSingleProduct(pid));
         return "dashboardUpdate";
     }

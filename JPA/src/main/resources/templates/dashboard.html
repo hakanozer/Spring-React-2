@@ -25,7 +25,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="detail">İçerik</label>
-                        <textarea class="form-control" name="detail" id="detail" rows="6"></textarea>
+                        <textarea class="form-control" name="detail" id="detail" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Kaydet</button>
                 </form>
@@ -33,6 +33,7 @@
             <div class="col-sm-6"></div>
         </div>
 
+        <div th:text="${products.getTotalElements()}"></div>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -47,7 +48,7 @@
             </thead>
             <tbody th:if="${products != null}">
 
-            <tr th:each="item, iter : ${products}">
+            <tr th:each="item, iter : ${products.getContent()}">
                 <th scope="row" th:text="${iter.count}"></th>
                 <th scope="row" th:text="${item.pid}"></th>
                 <td th:text="${item.title}"></td>
@@ -64,6 +65,16 @@
             </tr>
             </tbody>
         </table>
+
+        <nav>
+            <ul class="pagination pagination-sm">
+                <th:block th:each="i : ${#numbers.sequence(0, products.getTotalPages() - 1)}">
+                <li class="page-item " th:classappend="${ i == products.getPageable().getPageNumber() ? 'active' : ''  }" >
+                    <a class="page-link" th:href="${'?page='+i}" th:text="${i+1}"></a>
+                </li>
+                </th:block>
+            </ul>
+        </nav>
 
     </div>
 

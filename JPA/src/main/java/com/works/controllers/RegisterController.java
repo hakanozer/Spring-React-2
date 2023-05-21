@@ -21,7 +21,7 @@ public class RegisterController {
 
     @GetMapping("/")
     private String register(Model model){
-        req.getSession().setAttribute("cid", 1);
+        req.getSession().setAttribute("cid", 1l);
         model.addAttribute("error", error);
         model.addAttribute("success", success);
         error = "";

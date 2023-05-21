@@ -3,8 +3,12 @@ package com.works.services;
 import com.works.entities.Product;
 import com.works.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,19 +17,26 @@ import java.util.Optional;
 public class ProductService {
 
     final ProductRepository productRepository;
+    final HttpServletRequest req;
 
     public Product save( Product product ) {
+        Long cid =  (Long) req.getSession().getAttribute("cid");
+        product.setCid( cid );
         return productRepository.save(product);
     }
 
-    public List<Product> allProduct() {
-        return productRepository.findAll();
+    public Page<Product> allProduct(int page) {
+        Long cid =  (Long) req.getSession().getAttribute("cid");
+        Pageable pageable = PageRequest.of(page, 5);
+        Page<Product> productPage = productRepository.findByCidEqualsAllIgnoreCase(cid,pageable);
+        return productPage;
     }
 
     public boolean productDelete( String stPid ) {
         try {
             long pid = Long.parseLong(stPid);
-            boolean status = productRepository.existsById(pid);
+            Long cid =  (Long) req.getSession().getAttribute("cid");
+            boolean status = productRepository.existsByPidEqualsAndCidEquals(pid, cid);
             if ( status ) {
                 productRepository.deleteById(pid);
                 return true;

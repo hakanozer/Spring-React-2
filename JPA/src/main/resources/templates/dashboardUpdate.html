@@ -48,7 +48,7 @@
             </thead>
             <tbody th:if="${products != null}">
 
-            <tr th:each="item, iter : ${products}">
+            <tr th:each="item, iter : ${products.getContent()}">
                 <th scope="row" th:text="${iter.count}"></th>
                 <th scope="row" th:text="${item.pid}"></th>
                 <td th:text="${item.title}"></td>
