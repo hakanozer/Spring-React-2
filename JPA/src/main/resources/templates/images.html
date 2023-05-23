@@ -36,12 +36,13 @@
             </thead>
             <tbody th:if="${images != null}">
 
-            <tr th:each="item : ${images}">
+            <tr th:each="item, iter : ${images}">
                 <th scope="row" th:text="${item.iid}"></th>
                 <th scope="row" th:text="${item.pid}"></th>
                 <th scope="row">
-                    <img th:src="${item.image}" src="..." class="img-thumbnail">
-                </th>
+                    <td><img th:src="@{${'/getImage/'+ iter.index}}"
+                         class="card img-fluid" style="width:300px" alt=""/></td>
+                    </th>
                 <td>
                     <a th:href="${'/imageDelete/'+item.pid}" role="button" class="btn btn-danger btn-sm">Delete</a>
                 </td>
