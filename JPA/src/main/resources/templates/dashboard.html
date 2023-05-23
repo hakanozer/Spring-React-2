@@ -44,6 +44,7 @@
                 <th scope="col">Detail</th>
                 <th scope="col">Delete</th>
                 <th scope="col">Update</th>
+                <th scope="col">Images</th>
             </tr>
             </thead>
             <tbody th:if="${products != null}">
@@ -59,6 +60,9 @@
                 </td>
                 <td>
                     <a th:href="${'/dashboard/'+item.pid}" role="button" class="btn btn-primary btn-sm">Update</a>
+                </td>
+                <td>
+                    <a th:href="${'/images/'+item.pid}" role="button" class="btn btn-success btn-sm">Images</a>
                 </td>
 
                 </th:block>
