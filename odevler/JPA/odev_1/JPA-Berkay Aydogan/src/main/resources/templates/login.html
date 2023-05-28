@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+          crossorigin="anonymous"></script>
+</head>
+<body class="text-center">
+  <div class="container">
+        <th:block th:if="${error != ''}">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Error!</strong>
+                <i th:text="${error}"></i>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </th:block>
+      <th:block th:if="${success != ''}">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong>
+              <i th:text="${success}"></i>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> </button>
+          </div>
+      </th:block>
+         <form class="form-signin" method="post" action="/userLogin">
+            <img src="https://cdn-icons-png.flaticon.com/512/2170/2170153.png" class="rounded mx-auto d-block" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+           <label for="email" class="sr-only">Email Address</label>
+           <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+           <label for="password" class="sr-only">Password</label>
+           <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+           <a href="/register" role="button" class="btn btn-lg btn-success btn-block">Register</a>
+           <p class="mt-5 mb-3 text muted">&copy; İstanbul Egitim Akademi</p>
+          </form>
+        </div>
+        <div class="col-4"></div>
+      </div>
+  </div>
+</body>
+</html>
