@@ -2,10 +2,7 @@ package com.works.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,7 +12,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pid;
 
+    @Column(unique = true)
     private String title;
+
     private String detail;
     private Integer price;
     private Boolean status;
