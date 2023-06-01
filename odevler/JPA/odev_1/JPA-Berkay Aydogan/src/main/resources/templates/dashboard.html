@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<div th:replace="inc/navbar.html"></div>
+<div class="container">
+  <h1>Product Add</h1>
+  <section class="vh-50  gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <form action="/saveProduct" method="post" class="container">
+                <h2>Product Add</h2>
+                <div class="mb-3">
+                  <label for="product-title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="product-title" name="title" required>
+                </div>
+                <div class="mb-3">
+                  <label for="product-price" class="form-label">Price</label>
+                  <input type="number" class="form-control" id="product-price" name="price" required>
+                </div>
+                <div class="mb-3">
+                  <label for="product-detail" class="form-label">Detail</label>
+                  <textarea class="form-control" id="product-detail" name="detail"
+                            rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="product-stock" class="form-label">Stock</label>
+                  <input type="number" class="form-control" id="product-stock" name="stock" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <section class="vh-25  gradient-custom">
+      <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+              <div class="card-body p-4 p-md-5">
+                <h1>Products</h1>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">PID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Delete</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr th:each="product,iter : ${products}">
+                    <th scope="row" th:text="${iter.count}"></th>
+                    <th scope="row" th:text="${product.pid}"></th>
+                    <td th:text="${product.title}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.detail}"></td>
+                    <td th:text="${product.stock}"></td>
+                    <td>
+                      <a th:href="${'/deleteProduct/'+product.pid}" class="btn btn-danger btn-m">Delete</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
