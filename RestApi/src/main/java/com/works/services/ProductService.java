@@ -35,22 +35,26 @@ public class ProductService {
     }
 
 
-    public boolean delete( Long pid ) {
+    public ResponseEntity delete( Long pid ) {
         try {
             productRepository.deleteById(pid);
-            return true;
+            Rest res = new Rest(true, pid);
+            return new ResponseEntity(res, HttpStatus.OK);
         }catch (Exception ex) {
-            return false;
+            Rest res = new Rest(false, ex.getMessage());
+            return new ResponseEntity(res, HttpStatus.BAD_REQUEST);
         }
     }
 
-    public Product update( Product product ) {
+    public ResponseEntity update( Product product ) {
         Optional<Product> optionalProduct = productRepository.findById(product.getPid());
         if (optionalProduct.isPresent()) {
             productRepository.saveAndFlush(product);
-            return product;
+            Rest res = new Rest(true, product);
+            return new ResponseEntity(res, HttpStatus.OK);
         }
-        return null;
+        Rest res = new Rest(false, product);
+        return new ResponseEntity(res, HttpStatus.BAD_REQUEST);
     }
 
 }
