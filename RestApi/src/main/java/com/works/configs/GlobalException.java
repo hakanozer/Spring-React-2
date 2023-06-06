@@ -21,3 +21,21 @@ public class GlobalException {
     }
 
 }
+
+/*
+{
+    "status": false,
+    "result": [
+    {
+        "field": "title",
+        "defaultMessage": "boş değer olamaz",
+        "code": "NotEmpty"
+    },
+    {
+        "field": "price",
+        "defaultMessage": "boş değer olamaz",
+        "code": "NotEmpty"
+    }
+    ]
+}
+ */
