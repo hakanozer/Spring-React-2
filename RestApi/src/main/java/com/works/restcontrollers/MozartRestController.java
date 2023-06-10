@@ -1,5 +1,6 @@
 package com.works.restcontrollers;
 
+import com.works.models.MusicCategoryList;
 import com.works.services.MozartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,8 @@ public class MozartRestController {
     final MozartService mozartService;
 
     @GetMapping("/service")
-    public void service() {
-        mozartService.result();
+    public MusicCategoryList service() {
+        return mozartService.result();
     }
 
 }
