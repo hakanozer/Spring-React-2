@@ -3,6 +3,7 @@ package com.works.services;
 import com.works.models.Item;
 import com.works.models.MusicCategory;
 import com.works.models.MusicCategoryList;
+import com.works.models.News;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -72,7 +73,8 @@ public class MozartService {
     }
 
 
-    public void news() {
+    public List<News> news() {
+        List<News> newsList = new ArrayList<>();
         try {
             String url = "https://www.haberler.com/";
             Document doc = Jsoup.connect(url).timeout(15000).ignoreContentType(true).get();
@@ -82,15 +84,19 @@ public class MozartService {
                 String href = item.attr("href");
                 String src = item.getElementsByTag("img").attr("data-src");
                 if ( !title.isEmpty() && !href.isEmpty() && !src.isEmpty() ) {
-                    System.out.println("Title : " + title);
-                    System.out.println("href : " + href);
-                    System.out.println("src : " + src);
+                    News news = new News();
+                    news.setTitle(title);
+                    news.setHref(href);
+                    news.setSrc(src);
+                    newsList.add(news);
                 }
 
             }
         }catch (Exception ex) {
             System.err.println("News Error :" + ex);
         }
+
+        return newsList;
     }
 
 
