@@ -19,4 +19,9 @@ public class MozartRestController {
         return mozartService.result();
     }
 
+    @GetMapping("/news")
+    public void news() {
+        mozartService.news();
+    }
+
 }

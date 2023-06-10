@@ -9,10 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class MozartService {
@@ -33,7 +30,6 @@ public class MozartService {
                 if ( !objTitle.contains("a href=") ) {
                     String title = item.text().toString();
                     if ( !title.isEmpty() ) {
-                        System.out.println("Title : " + title);
                         hmTitle.put(countTitle, title);
                         countTitle++;
                     }
@@ -48,48 +44,55 @@ public class MozartService {
                         items.add(item1);
                     }
                 }
-
             }
         }catch (Exception ex) {
             System.err.println("Mozart Error : " + ex);
         }
         MusicCategoryList musicCategoryList = new MusicCategoryList();
         musicCategoryList.setMusicCategories( parseData( hmTitle, items ) );
-        System.out.println(hmTitle);
-        System.out.println(items);
         return musicCategoryList;
     }
 
     private List<MusicCategory> parseData(Map<Integer, String> hmTitle, List<Item> items) {
-
-        return null;
+        Set<Integer> keys = hmTitle.keySet();
+        List<MusicCategory> musicCategories = new ArrayList<>();
+        for( Integer key : keys ) {
+            MusicCategory musicCategory = new MusicCategory();
+            musicCategory.setBaseTitle( hmTitle.get(key) );
+            List<Item> itemList = new ArrayList<>();
+            for( Item item : items ) {
+                if ( item.getBaseCat() - 1 == key ) {
+                    itemList.add(item);
+                }
+            }
+            musicCategory.setItems(itemList);
+            musicCategories.add(musicCategory);
+        }
+        return musicCategories;
     }
 
+
+    public void news() {
+        try {
+            String url = "https://www.haberler.com/";
+            Document doc = Jsoup.connect(url).timeout(15000).ignoreContentType(true).get();
+            Elements elements = doc.getElementsByAttribute("data-headlinenumber");
+            for ( Element item : elements ) {
+                String title = item.attr("title");
+                String href = item.attr("href");
+                String src = item.getElementsByTag("img").attr("data-src");
+                if ( !title.isEmpty() && !href.isEmpty() && !src.isEmpty() ) {
+                    System.out.println("Title : " + title);
+                    System.out.println("href : " + href);
+                    System.out.println("src : " + src);
+                }
+
+            }
+        }catch (Exception ex) {
+            System.err.println("News Error :" + ex);
+        }
+    }
+
+
 }
 
-
-/*
-[
-
-{
-    baseTitle: Symphony No.1 in E flat, KV 16
-    musics: [
-       { title: "Allegro molto", url: "http://yiboyoung.com/music/mozart/mozart_complete/1EARLIERSYMPHONIES/EARLYSYMPHONIES_files/01a01.mp3" },
-       { title: "Andante", url: "http://yiboyoung.com/music/mozart/mozart_complete/1EARLIERSYMPHONIES/EARLYSYMPHONIES_files/01a01.mp3" },
-       { title: "Presto", url: "http://yiboyoung.com/music/mozart/mozart_complete/1EARLIERSYMPHONIES/EARLYSYMPHONIES_files/01a01.mp3" },
-    ]
-},
-
-{
-    baseTitle: Symphony No.1 in E flat, KV 16
-    musics: [
-       { title: "Allegro molto", url: "http://yiboyoung.com/music/mozart/mozart_complete/1EARLIERSYMPHONIES/EARLYSYMPHONIES_files/01a01.mp3" },
-       { title: "Andante", url: "http://yiboyoung.com/music/mozart/mozart_complete/1EARLIERSYMPHONIES/EARLYSYMPHONIES_files/01a01.mp3" },
-       { title: "Presto", url: "http://yiboyoung.com/music/mozart/mozart_complete/1EARLIERSYMPHONIES/EARLYSYMPHONIES_files/01a01.mp3" },
-    ]
-}
-
-]
-
-
- */
