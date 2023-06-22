@@ -1,10 +1,9 @@
 package com.works.restcontrollers;
 
+import com.works.models.Product;
 import com.works.services.DummyService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,6 +15,11 @@ public class DummyRestController {
     @GetMapping("/allProduct")
     public Object allProduct() {
         return dummyService.getAllProduct();
+    }
+
+    @PostMapping("/addProduct")
+    public Product addProduct(@RequestBody Product product) {
+        return dummyService.addProduct(product);
     }
 
 }
