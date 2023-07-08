@@ -4,24 +4,29 @@ import com.example.consumingwebservice.wsdl.TCKimlikNoDogrula;
 import com.example.consumingwebservice.wsdl.TCKimlikNoDogrulaResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ws.client.core.WebServiceTemplate;
 
 @RestController
 public class SoapRestController {
 
-    final TCClient tcClient;
-    public SoapRestController(TCClient tcClient) {
-        this.tcClient = tcClient;
+    final WebServiceTemplate webServiceTemplate;
+    public SoapRestController(WebServiceTemplate webServiceTemplate) {
+        this.webServiceTemplate = webServiceTemplate;
     }
+
 
     @GetMapping("/soap")
     public void soap() {
+        TCClient tcClient = new TCClient(webServiceTemplate);
         TCKimlikNoDogrula obj = new TCKimlikNoDogrula();
-        obj.setAd("Hakan");
-        obj.setSoyad("Özer");
-        obj.setDogumYili(1981);
-        obj.setTCKimlikNo(12345678912L);
-        TCKimlikNoDogrulaResponse res = tcClient.tcKimlikNoDogrula(obj);
-        System.out.println( res.isTCKimlikNoDogrulaResult() );
+        obj.setAd("Ertan");
+        obj.setSoyad("Kaya");
+        obj.setDogumYili(1997);
+        obj.setTCKimlikNo(26167660802L);
+
+        TCKimlikNoDogrulaResponse tcResponse = tcClient.tcKimlikNoDogrula(obj);
+        boolean verificationResult = tcResponse.isTCKimlikNoDogrulaResult();
+        System.out.println("Response: " + verificationResult);
     }
 
 

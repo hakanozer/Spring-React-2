@@ -1,19 +1,27 @@
 package com.works;
 
-import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import org.springframework.stereotype.Service;
+import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import com.example.consumingwebservice.wsdl.TCKimlikNoDogrula;
 import com.example.consumingwebservice.wsdl.TCKimlikNoDogrulaResponse;
+import com.example.consumingwebservice.wsdl.TCKimlikNoDogrula;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 public class TCClient extends WebServiceGatewaySupport {
 
-
-    public TCKimlikNoDogrulaResponse tcKimlikNoDogrula( TCKimlikNoDogrula tcKimlikNoDogrula  ) {
-        TCKimlikNoDogrulaResponse res = (TCKimlikNoDogrulaResponse) getWebServiceTemplate().marshalSendAndReceive(tcKimlikNoDogrula);
-        return res;
+    public TCClient(WebServiceTemplate webServiceTemplate) {
+        super.setWebServiceTemplate(webServiceTemplate);
     }
 
+    public TCKimlikNoDogrulaResponse tcKimlikNoDogrula(TCKimlikNoDogrula tcKimlikNoDogrula){
+        TCKimlikNoDogrulaResponse res = (TCKimlikNoDogrulaResponse) getWebServiceTemplate()
+                .marshalSendAndReceive(
+                        "https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx",
+                        tcKimlikNoDogrula,
+                        new SoapActionCallback(
+                                "http://tckimlik.nvi.gov.tr/WS/TCKimlikNoDogrula"
+                        )
+                );
+        return res;
+    }
 
 }
