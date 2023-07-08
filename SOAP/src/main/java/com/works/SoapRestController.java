@@ -20,7 +20,7 @@ public class SoapRestController {
         TCClient tcClient = new TCClient(webServiceTemplate);
         TCKimlikNoDogrula obj = new TCKimlikNoDogrula();
         obj.setAd("Ertan");
-        obj.setSoyad("Kaya");
+        obj.setSoyad("Ka");
         obj.setDogumYili(1997);
         obj.setTCKimlikNo(26167660802L);
 
