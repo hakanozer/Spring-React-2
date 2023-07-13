@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
+import { NavLink } from 'react-router-dom'
 
 function Home() {
 
@@ -40,7 +41,7 @@ function Home() {
         </form>
         <hr></hr>
         {arr.map( (item, index) =>
-            <li key={index}> {item} </li>
+           <li key={index}> <NavLink to={'/detail/' + item + '/' + index} >{item}</NavLink></li>
         )}
         <hr></hr>
         <div className='row'>
