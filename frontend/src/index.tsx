@@ -4,15 +4,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // import pages
 import Home from './pages/Home';
-import Category from './pages/Category';
-import Detail from './pages/Detail';
+import Login from './pages/Login';
+import Control from './pages/Control';
 
 const router = 
 <BrowserRouter>
   <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='/category' element={<Category/>}/>
-    <Route path='/detail/:id/:index' element={<Detail />} />
+    <Route path='/' element={<Login />} />
+    <Route path='/home' element={ <Control item={<Home/>} /> }/>
   </Routes>
 </BrowserRouter>
 
