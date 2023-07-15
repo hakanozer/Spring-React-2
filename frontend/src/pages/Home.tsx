@@ -24,7 +24,7 @@ function Home() {
         { arr.map( (item, index) => 
             <div className='col-sm-4' key={index}>
                 <div className="card">
-                    <img src={item.thumbnail} className="card-img-top" />
+                    <img src={item.thumbnail} style={{ height: 200, }} className="card-img-top" />
                     <div className="card-body">
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.category}</p>
