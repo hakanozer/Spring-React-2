@@ -1,5 +1,5 @@
 import axios from "axios";
-import { DummProducts } from "./models/DummProducts";
+import { DummProducts, Product } from "./models/DummProducts";
 
 const config = axios.create({
     baseURL: 'https://dummyjson.com/',
@@ -16,4 +16,8 @@ export const login = (username: string, password: string) => {
 
 export const allProduct = () => {
     return config.get<DummProducts>('products')
+}
+
+export const singleProduct = (id:string) => {
+    return config.get<Product>('products/'+id)
 }

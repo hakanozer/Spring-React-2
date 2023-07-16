@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { allProduct } from '../service'
 import { Product } from '../models/DummProducts'
+import { NavLink } from 'react-router-dom'
 
 function Home() {
 
@@ -29,7 +30,7 @@ function Home() {
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.category}</p>
                         <p className="card-text">{item.price}$</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <NavLink to={'/detail/'+item.id} className="btn btn-primary">Detail</NavLink>
                     </div>
                 </div>
             </div>

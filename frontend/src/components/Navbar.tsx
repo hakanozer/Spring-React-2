@@ -1,7 +1,15 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Navbar() {
+
+  const navigate = useNavigate()
+
+  const logout = () => {
+    sessionStorage.removeItem('admin')
+    navigate('/')
+  }
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -26,7 +34,7 @@ function Navbar() {
                   <li><a className="dropdown-item" href="#">Action</a></li>
                   <li><a className="dropdown-item" href="#">Another action</a></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                  <li><a className="dropdown-item" onClick={logout} role='button'>Logout</a></li>
                 </ul>
               </li>
               <li className="nav-item">
