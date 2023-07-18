@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { singleProduct } from '../service'
 import { Product } from '../models/DummProducts'
+import { IAdmin } from '../models/IAdmin'
 
 function Detail() {
 
@@ -22,6 +23,22 @@ function Detail() {
         })
     }
    }, [])
+
+   const [adm, setAdm] = useState<IAdmin>()
+   useEffect(() => {
+    const stSession = sessionStorage.getItem('admin')
+    var admin:IAdmin
+    if ( stSession !== null ) {
+      admin = JSON.parse(stSession) as IAdmin
+      setAdm(admin)
+    }
+   }, [])
+   
+
+
+   const addBasket = () => {
+    console.log('add basket', adm?.id, id)
+   }
    
 
   return (
@@ -35,12 +52,13 @@ function Detail() {
                         <p>{item.price}$</p>
                         <p>{item.brand}</p>
                         <p>{item.stock}</p>
+                        <button onClick={addBasket} className='btn btn-danger'>Add Basket</button>
                     </div>
                     <div className='col-sm-6'>
                     <img src={bigImage} className="img-fluid img-thumbnail"  />
                     <div className='row mt-3'>
                         { item.images.map((item, index) => 
-                            <div className='col-2' role='button' onClick={() => setBigImage(item) }>
+                            <div key={index} className='col-2' role='button' onClick={() => setBigImage(item) }>
                                 <img src={item} className='img-thumbnail' />
                             </div>
                         )}

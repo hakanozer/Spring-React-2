@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { IAdmin } from '../models/IAdmin'
 
-function Navbar() {
+function Navbar( item: { admin:IAdmin } ) {
 
   const navigate = useNavigate()
 
@@ -38,7 +39,7 @@ function Navbar() {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
+                <a className="nav-link disabled">{item.admin.firstName} {item.admin.lastName}</a>
               </li>
             </ul>
             <form className="d-flex" role="search">
