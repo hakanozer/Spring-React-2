@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { login } from '../service'
 import { useNavigate } from 'react-router-dom'
+import { encrypt } from '../util'
 
 function Login() {
 
@@ -12,7 +13,8 @@ function Login() {
     evt.preventDefault()
     login(username, password).then( res => {
         const stData = JSON.stringify(res.data)
-        sessionStorage.setItem('admin', stData)
+        const cipherText = encrypt(stData)
+        sessionStorage.setItem('admin', cipherText)
         navigate('/home')
     }).catch(err => {
         console.log(err.message)

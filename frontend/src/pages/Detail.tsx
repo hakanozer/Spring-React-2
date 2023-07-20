@@ -4,6 +4,7 @@ import { addCard, singleProduct } from '../service'
 import { Product } from '../models/DummProducts'
 import { IAdmin } from '../models/IAdmin'
 import { toast } from 'react-toastify';
+import { decrypt } from '../util'
 
 function Detail() {
 
@@ -30,8 +31,21 @@ function Detail() {
     const stSession = sessionStorage.getItem('admin')
     var admin:IAdmin
     if ( stSession !== null ) {
-      admin = JSON.parse(stSession) as IAdmin
-      setAdm(admin)
+      try {
+        const plainText = decrypt(stSession)
+        admin = JSON.parse(plainText) as IAdmin
+        if (admin) {
+            setAdm(admin)
+        }else {
+            navigate('/')
+        }
+        
+      } catch (error) {
+        //sessionStorage.removeItem('admin')
+        navigate('/')
+        console.log("oturm yok")
+      }
+
     }
    }, [])
    
