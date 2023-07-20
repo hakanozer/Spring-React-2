@@ -21,3 +21,16 @@ export const allProduct = () => {
 export const singleProduct = (id:string) => {
     return config.get<Product>('products/'+id)
 }
+
+export const addCard = ( userId: number, pid: string ) => {
+    const sendObj = {
+        userId: userId,
+        products: [
+            {
+            id: pid,
+            quantity: 1,
+            }
+        ]
+    }
+    return config.post('/carts/add', sendObj)
+}

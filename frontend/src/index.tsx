@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import pages
 import Home from './pages/Home';
@@ -10,6 +12,7 @@ import Detail from './pages/Detail';
 
 const router = 
 <BrowserRouter>
+  <ToastContainer/>
   <Routes>
     <Route path='/' element={<Login />} />
     <Route path='/home' element={ <Control item={<Home/>} /> }/>

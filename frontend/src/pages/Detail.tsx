@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { singleProduct } from '../service'
+import { addCard, singleProduct } from '../service'
 import { Product } from '../models/DummProducts'
 import { IAdmin } from '../models/IAdmin'
+import { toast } from 'react-toastify';
 
 function Detail() {
 
@@ -37,7 +38,15 @@ function Detail() {
 
 
    const addBasket = () => {
-    console.log('add basket', adm?.id, id)
+    addCard(adm!.id, id!).then(res => {
+        const obj = res.data
+        if (obj) {
+            toast.success("Add Basket Success!")
+        }
+        console.log( obj )
+    }).catch(err => {
+        console.log(err.message)
+    })
    }
    
 
