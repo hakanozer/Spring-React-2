@@ -46,6 +46,8 @@ public class JwtUtil {
     // userDetails objesini alır. createToken metoduna gönderir.
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("id", 100);
+        claims.put("profile", "https://picsum.photos/100/100" );
         return createToken(claims, userDetails.getUsername());
     }
 
